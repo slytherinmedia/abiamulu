@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.mixed-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, pink, skyblue);
+  z-index: -1;
+}
+
+.heart-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: heartbeat 2s infinite;
+}
+
+.heart {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation: beat 1.5s infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 150px;
+  border-radius: 50px 50px 0 0;
+  background-color: pink;
+}
+
+.heart::before {
+  left: -50px;
+  transform: rotate(-45deg);
+}
+
+.heart::after {
+  left: 0;
+  transform: rotate(45deg);
+}
+
+@keyframes beat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1); }
+  100% { transform: scale(0.8); }
+}
+
+.floating-heart-balloons {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+.balloon1,
+.balloon2,
+.balloon3 {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #FF1493;
+  border-radius: 50%;
+  animation: float 8s infinite alternate;
+}
+
+@keyframes float {
+  0% { top: 0; }
+  100% { top: -20%; }
+}
+
+.love-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 32px;
+  font-weight: bold;
+  color: #FF007F; /* Rose color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.smaller-text {
+  font-size: 24px;
+}
+
+.bigger-text {
+  font-size: 36px;
+}
+
+.rainbow-text {
+  background: linear-gradient(135deg, #FF1493, #FF4500, #FFD700, #32CD32, #00BFFF, #800080, #FF1493);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rainbow 4s infinite;
+}
+
+.rose-text {
+  background: linear-gradient(135deg, #FF007F, #FF007F, #FF007F, #FF007F, #FF007F, #FF007F, #FF007F);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rainbow 4s infinite;
+}
+
+@keyframes rainbow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
